@@ -1,10 +1,9 @@
 import { StyleSheet, Text, View, Button } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment } from '../../store/reducer/counter'
 import { useAppSelector, useAppDispatch } from '../../store/hooks'
-//import { useGetPokemonByNameQuery } from '../../services/pokemon'
-import { NativeStackScreenProps } from '@react-navigation/native-stack'
+import firestore from '@react-native-firebase/firestore';
 import { Props } from '../../root'
 
 /**
@@ -23,6 +22,18 @@ const Home = ({ navigation }: Props) => {
   const dispatch = useAppDispatch()
   //const { data, error, isLoading } = useGetPokemonByNameQuery('bulbasaur')
 
+  useEffect(()=>{
+    firestore()
+    .collection('UsersIphone')
+    .add({
+      name: 'Ada Lovelace',
+      age: 30,
+    })
+    .then(() => {
+      console.log('User added!');
+    });
+  },[])
+  
   return (
     <View>
       <Text>{count} </Text>
