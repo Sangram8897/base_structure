@@ -7,26 +7,16 @@ import Account from '../containers/account';
 import { Provider } from 'react-redux';
 import { store } from '../store/configure_store';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-
-type RootStackParamList = {
-  Home: undefined;
-  Account: { userId: string };
-};
-
-export type Props = NativeStackScreenProps<RootStackParamList>;
-
-const RootStack = createNativeStackNavigator<RootStackParamList>();
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import AppNavigation from './navigation';
 
 function App() {
   return (
-    <Provider store={store}>
-      <NavigationContainer>
-        <RootStack.Navigator>
-          <RootStack.Screen name="Home" component={Home} />
-          <RootStack.Screen name="Account" component={Account} />
-        </RootStack.Navigator>
-      </NavigationContainer>
-    </Provider>
+    <View style={{ flex: 1 }}>
+   
+        <AppNavigation />
+      {/* </GestureHandlerRootView> */}
+    </View>
   );
 }
 

@@ -1,11 +1,14 @@
 
 import Gutters from '../Gutters';
-import { MetricsSizes } from '../variables';
+import { FontSizes, MetricsSizes } from '../variables';
 import Layout from '../Layout';
+import FontSize from '../Fonts'
+import { Colors } from '../colors';
 
 const useTheme = () => {
     const baseTheme = {
-        Gutters: Gutters(MetricsSizes),
+        Fonts:FontSize(Colors),
+        // Gutters: Gutters(MetricsSizes),
         Layout: Layout()
     }
 

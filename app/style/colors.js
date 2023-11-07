@@ -4,6 +4,7 @@ export const Colors = {
     balck: 'black',
     success: '#28a745',
     error: '#dc3545',
+    text:'black',
 
 
 

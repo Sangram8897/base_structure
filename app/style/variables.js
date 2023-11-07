@@ -10,3 +10,11 @@ export const MetricsSizes = {
     medium,
     large,
 }
+
+export const FontSizes = {
+    extraTiny: 12,
+    small: 16,
+    regular: 20,
+    medium: 30,
+    large: 40,
+}
